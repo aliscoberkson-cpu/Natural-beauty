@@ -55,6 +55,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            /* Placeholder comment: You can swap WEBVF.jfif out for any image name below */
             background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('WEBVF.jfif') center/cover no-repeat;
             color: var(--dark);
             padding: 40px 20px;
@@ -127,49 +128,7 @@
             transform: scale(1.05);
         }
 
-        /* --- Best Seller Spotlight --- */
-        .best-seller-banner {
-            background: var(--dark);
-            color: #fff;
-            padding: 50px 20px;
-            text-align: center;
-            border-top: 4px solid var(--accent);
-            border-bottom: 4px solid var(--accent);
-        }
-
-        .best-seller-badge {
-            background: var(--accent);
-            color: var(--dark);
-            padding: 6px 18px;
-            font-weight: 600;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-        }
-
-        .best-seller-banner h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 12px;
-        }
-
-        .best-seller-banner p {
-            color: #ccc;
-            max-width: 600px;
-            margin: 0 auto 20px auto;
-            font-size: 1.05rem;
-        }
-
-        .best-seller-banner .price {
-            font-size: 2.2rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        /* --- Catalog Section --- */
+        /* --- Main Collection Catalog Grid --- */
         .catalog-container {
             max-width: 1200px;
             margin: 80px auto;
@@ -231,7 +190,7 @@
         }
 
         .img-container {
-            height: 350px;
+            height: 380px;
             overflow: hidden;
             position: relative;
             background-color: #f7f5f2;
@@ -246,40 +205,6 @@
 
         .card:hover .img-container img {
             transform: scale(1.08);
-        }
-
-        .card-content {
-            padding: 25px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .specs {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--primary);
-            background: var(--light);
-            padding: 6px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 15px;
         }
 
         /* --- Footer --- */
@@ -301,7 +226,8 @@
 
     <!-- Hero Header Section -->
     <header>
-        <img src="WB.jfif" alt="Natural Beauty Logo" class="brand-logo">
+        <!-- Logo Display Image Slot -->
+        <img src="WB.jfif" alt="Natural Beauty" class="brand-logo">
         <h1>Natural Beauty</h1>
         <p>Premium, 100% organic skincare and hair remedies meticulously crafted to let your natural glow radiate beautifully.</p>
         
@@ -316,112 +242,85 @@
         </div>
     </header>
 
-    <!-- Best Seller Spotlight Banner -->
-    <section class="best-seller-banner">
-        <span class="best-seller-badge"><i class="fas fa-crown"></i> Best Seller</span>
-        <h2>African Black Soap</h2>
-        <p>Formulated for all skin types featuring Cocoa Pods, Shea Butter, Coconut Oil, and Palm Oil.</p>
-        <div class="price">6,000 RWF</div>
-    </section>
-
     <!-- Main Collection Catalog Grid -->
     <main class="catalog-container">
         <h2 class="section-title">Our Pure Collection</h2>
         
         <div class="grid">
-            <!-- Product 1 -->
+            <!-- Product Card 1 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="WBV.jfif" alt="Body Soap">
-                </div>
-                <div class="card-content">
-                    <h3>Body Soap</h3>
-                    <p>Rich brightening fusion blend containing Turmeric, Papaya, Oils, and Rose water.</p>
-                    <div><span class="specs">Size: 250g</span></div>
+                    <img src="WB.jfif" alt="Natural Beauty Collection">
                 </div>
             </div>
 
-            <!-- Product 2 -->
+            <!-- Product Card 2 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="WBTR.jfif" alt="Hair Growth Oil">
-                </div>
-                <div class="card-content">
-                    <h3>Hair Growth Oil</h3>
-                    <p>Meticulously blended target oil complex crafted purely for scalp-only nourishment and root revival.</p>
-                    <div><span class="specs">Size: 100ml</span></div>
+                    <img src="WBG.jfif" alt="Natural Beauty Collection">
                 </div>
             </div>
 
-            <!-- Product 3 -->
+            <!-- Product Card 3 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="WBG.jfif" alt="Moringa Hair Butter">
-                </div>
-                <div class="card-content">
-                    <h3>Moringa Hair Butter</h3>
-                    <p>Intense natural conditioning dynamic powered with premium Moringa extracts and Shea butter infusions.</p>
-                    <div><span class="specs">Size: 250g</span></div>
+                    <img src="WBJPG.jfif" alt="Natural Beauty Collection">
                 </div>
             </div>
 
-            <!-- Product 4 -->
+            <!-- Product Card 4 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="wnhj.jfif" alt="Sidir Powder">
-                </div>
-                <div class="card-content">
-                    <h3>Sidir Powder</h3>
-                    <p>Traditional cleansing leaf powder. Excellent for deep pore clarifying skin softening masks.</p>
-                    <div><span class="specs">Size: 200g</span></div>
+                    <img src="WBTR.jfif" alt="Natural Beauty Collection">
                 </div>
             </div>
 
-            <!-- Product 5 -->
+            <!-- Product Card 5 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="wbn.jfif" alt="Pure Shea Butter">
-                </div>
-                <div class="card-content">
-                    <h3>Pure Shea Butter</h3>
-                    <p>100% Natural raw organic butter loaded with dense vitamins protecting against severe heat elements.</p>
-                    <div><span class="specs">Size: 250g</span></div>
+                    <img src="WBV.jfif" alt="Natural Beauty Collection">
                 </div>
             </div>
 
-            <!-- Product 6 -->
+            <!-- Product Card 6 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="WBJPG.jfif" alt="Vanilla Body Butter">
-                </div>
-                <div class="card-content">
-                    <h3>Vanilla Body Butter</h3>
-                    <p>An exquisite ultra-nourishing blend infused with vanilla, organic jojoba oil, raw shea butter, and pure coconut oil.</p>
-                    <div><span class="specs">Size: 250g</span></div>
+                    <img src="WBVC.jfif" alt="Natural Beauty Collection">
                 </div>
             </div>
 
-            <!-- Product 7 -->
+            <!-- Product Card 7 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="wbnm.jfif" alt="Orange Peeling Powder">
-                </div>
-                <div class="card-content">
-                    <h3>Orange Peeling Powder</h3>
-                    <p>Vitamin-C rich organic clarifying powder ideal to reset tone brightness when mixed with yogurt.</p>
-                    <div><span class="specs">Size: 250g</span></div>
+                    <img src="WEBVF.jfif" alt="Natural Beauty Collection">
                 </div>
             </div>
 
-            <!-- Product 8 -->
+            <!-- Product Card 8 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="WBVC.jfif" alt="Organic Castor Oil">
+                    <img src="wbn.jfif" alt="Natural Beauty Collection">
                 </div>
-                <div class="card-content">
-                    <h3>Organic Castor Oil</h3>
-                    <p>100% Pure multi-functional strengthening organic booster oil for premium hair, body, and nails care.</p>
-                    <div><span class="specs">Size: 50ml</span></div>
+            </div>
+
+            <!-- Product Card 9 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="wbnm.jfif" alt="Natural Beauty Collection">
+                </div>
+            </div>
+
+            <!-- Product Card 10 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="wbnmk.jfif" alt="Natural Beauty Collection">
+                </div>
+            </div>
+
+            <!-- Product Card 11 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="wnhj.jfif" alt="Natural Beauty Collection">
                 </div>
             </div>
         </div>
