@@ -3,76 +3,435 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natural Beauty Brand</title>
+    <title>Natural Beauty Cosmetics</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-        body { background-color: #fafaf9; color: #44403c; line-height: 1.6; }
-        
-        nav { background: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .logo-img { height: 50px; border-radius: 4px; object-fit: contain; }
-        .btn { display: inline-block; background: #78716c; color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-weight: bold; }
-        
-        .interface-container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        
-        .main-hero-block { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e7e5e4; margin-bottom: 2rem; text-align: center; padding: 2rem; }
-        .main-interface-img { width: 100%; max-width: 600px; height: auto; border-radius: 8px; margin-bottom: 1.5rem; }
-        
-        h1 { font-size: 2rem; color: #1c1917; margin-bottom: 0.5rem; }
-        p { color: #78716c; margin-bottom: 1.5rem; }
-        
-        .showcase-section { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e7e5e4; }
-        .showcase-section h2 { margin-bottom: 1.5rem; color: #1c1917; text-align: center; }
-        
-        .full-img-block { margin-bottom: 2.5rem; text-align: center; }
-        .full-img-block:last-child { margin-bottom: 0; }
-        .full-img-block img { width: 100%; max-width: 700px; height: auto; border-radius: 8px; border: 1px solid #e7e5e4; }
-        
-        footer { text-align: center; padding: 2rem; background: #1c1917; color: #a8a29e; margin-top: 5rem; }
+        :root {
+            --primary: #8a7355;
+            --primary-light: #b5a28c;
+            --dark: #22201d;
+            --light: #faf8f5;
+            --accent: #dcae1d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 5px 15px rgba(138, 115, 85, 0.2); }
+            50% { box-shadow: 0 5px 25px rgba(220, 174, 29, 0.4); }
+            100% { box-shadow: 0 5px 15px rgba(138, 115, 85, 0.2); }
+        }
+
+        /* --- Header / Hero --- */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(34, 32, 29, 0.6), rgba(34, 32, 29, 0.7)), url('hero-bg.jpg') center/cover no-repeat;
+            color: #fff;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 10px;
+            animation: fadeInDown 1.2s ease-out forwards;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            animation: fadeInUp 1.2s ease-out forwards;
+            color: #e5dfd8;
+        }
+
+        /* --- CTA Links (Strict Ordered Sequence) --- */
+        .social-links {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1.5s ease-out forwards;
+        }
+
+        .btn-social {
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+            color: #fff;
+        }
+
+        .btn-tiktok {
+            background: #000000;
+            border: 2px solid #fe2c55;
+        }
+        .btn-tiktok:hover {
+            box-shadow: 0 0 15px #fe2c55;
+            transform: scale(1.05);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            border: 2px solid #20ba5a;
+        }
+        .btn-whatsapp:hover {
+            box-shadow: 0 0 15px #25D366;
+            transform: scale(1.05);
+        }
+
+        /* --- Best Seller Spotlight --- */
+        .best-seller-banner {
+            background: var(--dark);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 4px solid var(--accent);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .best-seller-badge {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            font-weight: 600;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .best-seller-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .best-seller-banner .price {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* --- Catalog Section --- */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--primary);
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        /* --- Scroll Animation Classes --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Product Card --- */
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(138, 115, 85, 0.1);
+            animation: glow 4s infinite ease-in-out;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .img-container {
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .img-container img {
+            transform: scale(1.08);
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .specs {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--light);
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 100px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <!-- Top Logo -->
-        <img src="wbn.jfif" alt="Logo" class="logo-img">
-        <a href="#" class="btn">Contact</a>
-    </nav>
-
-    <div class="interface-container">
+    <!-- Hero Header Section -->
+    <header>
+        <h1>Natural Beauty</h1>
+        <p>Premium, 100% organic skincare and hair remedies meticulously crafted to let your natural glow radiate beautifully.</p>
         
-        <!-- Main Website Interface Block -->
-        <section class="main-hero-block">
-            <img src="WBJPG.jfif" alt="Main Interface View" class="main-interface-img">
-            <h1>Welcome to Natural Beauty</h1>
-            <p>Explore our complete interface updates and premium gallery below.</p>
-        </section>
+        <!-- Social Contact Group (Exact ordered requested) -->
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@YOUR_USERNAME" target="_blank" class="btn-social btn-tiktok">
+                <i class="fab fa-tiktok"></i> TikTok Profile
+            </a>
+            <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="btn-social btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </a>
+        </div>
+    </header>
 
-        <!-- Full Interface Gallery Showcase -->
-        <section class="showcase-section">
-            <h2>Interface Showcase</h2>
-            
-            <div class="full-img-block">
-                <img src="WBTR.jfif" alt="Interface View 1">
-            </div>
-            
-            <div class="full-img-block">
-                <img src="WBV.jfif" alt="Interface View 2">
-            </div>
-            
-            <div class="full-img-block">
-                <img src="WBVC.jfif" alt="Interface View 3">
-            </div>
-            
-            <div class="full-img-block">
-                <img src="WEBVF.jfif" alt="Interface View 4">
-            </div>
-        </section>
+    <!-- Best Seller Spotlight Banner -->
+    <section class="best-seller-banner">
+        <span class="best-seller-badge"><i class="fas fa-crown"></i> Best Seller</span>
+        <h2>African Black Soap</h2>
+        <p>Formulated for all skin types featuring Cocoa Pods, Shea Butter, Coconut Oil, and Palm Oil.</p>
+        <div class="price">6,000 SDG</div>
+    </section>
 
-    </div>
+    <!-- Main Collection Catalog Grid -->
+    <main class="catalog-container">
+        <h2 class="section-title">Our Pure Collection</h2>
+        
+        <div class="grid">
+            <!-- Product 1 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="body_soap.jpg" alt="Body Soap Sabounia">
+                </div>
+                <div class="card-content">
+                    <h3>Body Soap (صابونية)</h3>
+                    <p>Rich brightening fusion blend containing Turmeric, Papaya, Oils, and Rose water.</p>
+                    <div><span class="specs">Size: 250g</span></div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="hair_oil.jpg" alt="Hair Growth Oil">
+                </div>
+                <div class="card-content">
+                    <h3>Hair Growth Oil</h3>
+                    <p>Meticulously blended target oil complex crafted purely for scalp-only nourishment and root revival.</p>
+                    <div><span class="specs">Size: 100ml</span></div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="moringa_butter.jpg" alt="Moringa Hair Butter">
+                </div>
+                <div class="card-content">
+                    <h3>Moringa Hair Butter</h3>
+                    <p>Intense natural conditioning dynamic powered with premium Moringa extracts and Shea butter infusions.</p>
+                    <div><span class="specs">Size: 250g</span></div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="sidir_powder.jpg" alt="Sidir Powder">
+                </div>
+                <div class="card-content">
+                    <h3>Sidir Powder</h3>
+                    <p>Traditional cleansing leaf powder. Excellent for deep pore clarifying skin softening masks.</p>
+                    <div><span class="specs">Size: 200g</span></div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="shea_butter.jpg" alt="Pure Shea Butter">
+                </div>
+                <div class="card-content">
+                    <h3>Pure Shea Butter</h3>
+                    <p>100% Natural raw organic butter loaded with dense vitamins protecting against severe heat elements.</p>
+                    <div><span class="specs">Size: 250g</span></div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="hibiscus_scrub.jpg" alt="Hibiscus Body Scrub">
+                </div>
+                <div class="card-content">
+                    <h3>Hibiscus Body Scrub</h3>
+                    <p>An exquisite exfoliating blend formulated with brown sugar, pure honey, and refreshing hibiscus powder.</p>
+                    <div><span class="specs">Size: 250g</span></div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="orange_peel.jpg" alt="Orange Peeling Powder">
+                </div>
+                <div class="card-content">
+                    <h3>Orange Peeling Powder</h3>
+                    <p>Vitamin-C rich organic clarifying powder ideal to reset tone brightness when mixed with yogurt.</p>
+                    <div><span class="specs">Size: 250g</span></div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="card reveal">
+                <div class="img-container">
+                    <img src="castor_oil.jpg" alt="Organic Castor Oil">
+                </div>
+                <div class="card-content">
+                    <h3>Organic Castor Oil</h3>
+                    <p>100% Pure multi-functional strengthening organic booster oil for premium hair, body, and nails care.</p>
+                    <div><span class="specs">Size: 50ml</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Natural Beauty. All rights reserved.</p>
+        <p>&copy; 2026 Natural Beauty Cosmetics. Handcrafted Organic Wellness.</p>
     </footer>
 
+    <!-- Interactive On-Scroll Reveal Script -->
+    <script>
+        function revealElements() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150; // Triggers reveal when element is 150px into view
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", revealElements);
+        // Initial run in case elements are already on screen
+        revealElements();
+    </script>
 </body>
 </html>
