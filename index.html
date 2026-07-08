@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natural Beauty Cosmetics</title>
     <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -55,6 +55,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            /* FALLBACK BACKGROUND: If your hero image fails to load, this solid color preserves readability */
+            background-color: #f3eee6;
             background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('hero-bg.jpg') center/cover no-repeat;
             color: var(--dark);
             padding: 40px 20px;
@@ -66,6 +68,8 @@
             object-fit: contain;
             margin-bottom: 20px;
             animation: fadeInDown 1.2s ease-out forwards;
+            background-color: rgba(0,0,0,0.03);
+            border-radius: 50%;
         }
 
         header h1 {
@@ -204,8 +208,8 @@
         /* --- Scroll Animation Classes --- */
         .reveal {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .reveal.active {
@@ -233,6 +237,7 @@
             height: 350px;
             overflow: hidden;
             position: relative;
+            background-color: #f7f5f2; /* Fallback frame color */
         }
 
         .img-container img {
@@ -299,7 +304,7 @@
 
     <!-- Hero Header Section -->
     <header>
-        <!-- Your brand profile picture / logo goes here -->
+        <!-- Paste your online direct logo URL or leave local path -->
         <img src="logo.png" alt="Natural Beauty Logo" class="brand-logo">
         <h1>Natural Beauty</h1>
         <p>Premium, 100% organic skincare and hair remedies meticulously crafted to let your natural glow radiate beautifully.</p>
@@ -434,10 +439,12 @@
     <script>
         function revealElements() {
             var reveals = document.querySelectorAll(".reveal");
+            var windowHeight = window.innerHeight;
+            
             for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
+                // Elements load immediately if they are already inside the viewport window view range
+                var elementVisible = 60; 
                 
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
@@ -445,8 +452,11 @@
             }
         }
 
+        // Run immediately on page load, and bind to scrolling events
         window.addEventListener("scroll", revealElements);
-        revealElements();
+        window.addEventListener("DOMContentLoaded", revealElements);
+        // Backup run execution
+        setTimeout(revealElements, 200);
     </script>
 </body>
 </html>
