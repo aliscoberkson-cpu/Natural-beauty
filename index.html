@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natural Beauty Cosmetics</title>
     <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght=300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -55,9 +55,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* FALLBACK BACKGROUND: If your hero image fails to load, this solid color preserves readability */
-            background-color: #f3eee6;
-            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('hero-bg.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('WEBVF.jfif') center/cover no-repeat;
             color: var(--dark);
             padding: 40px 20px;
         }
@@ -68,7 +66,6 @@
             object-fit: contain;
             margin-bottom: 20px;
             animation: fadeInDown 1.2s ease-out forwards;
-            background-color: rgba(0,0,0,0.03);
             border-radius: 50%;
         }
 
@@ -208,7 +205,7 @@
         /* --- Scroll Animation Classes --- */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
@@ -237,7 +234,7 @@
             height: 350px;
             overflow: hidden;
             position: relative;
-            background-color: #f7f5f2; /* Fallback frame color */
+            background-color: #f7f5f2;
         }
 
         .img-container img {
@@ -304,8 +301,7 @@
 
     <!-- Hero Header Section -->
     <header>
-        <!-- Paste your online direct logo URL or leave local path -->
-        <img src="logo.png" alt="Natural Beauty Logo" class="brand-logo">
+        <img src="WB.jfif" alt="Natural Beauty Logo" class="brand-logo">
         <h1>Natural Beauty</h1>
         <p>Premium, 100% organic skincare and hair remedies meticulously crafted to let your natural glow radiate beautifully.</p>
         
@@ -336,7 +332,7 @@
             <!-- Product 1 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="body_soap.jpg" alt="Body Soap">
+                    <img src="WBV.jfif" alt="Body Soap">
                 </div>
                 <div class="card-content">
                     <h3>Body Soap</h3>
@@ -348,7 +344,7 @@
             <!-- Product 2 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="hair_oil.jpg" alt="Hair Growth Oil">
+                    <img src="WBTR.jfif" alt="Hair Growth Oil">
                 </div>
                 <div class="card-content">
                     <h3>Hair Growth Oil</h3>
@@ -360,7 +356,7 @@
             <!-- Product 3 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="moringa_butter.jpg" alt="Moringa Hair Butter">
+                    <img src="WBG.jfif" alt="Moringa Hair Butter">
                 </div>
                 <div class="card-content">
                     <h3>Moringa Hair Butter</h3>
@@ -372,7 +368,7 @@
             <!-- Product 4 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="sidir_powder.jpg" alt="Sidir Powder">
+                    <img src="wnhj.jfif" alt="Sidir Powder">
                 </div>
                 <div class="card-content">
                     <h3>Sidir Powder</h3>
@@ -384,7 +380,7 @@
             <!-- Product 5 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="shea_butter.jpg" alt="Pure Shea Butter">
+                    <img src="wbn.jfif" alt="Pure Shea Butter">
                 </div>
                 <div class="card-content">
                     <h3>Pure Shea Butter</h3>
@@ -396,11 +392,11 @@
             <!-- Product 6 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="hibiscus_scrub.jpg" alt="Hibiscus Body Scrub">
+                    <img src="WBJPG.jfif" alt="Vanilla Body Butter">
                 </div>
                 <div class="card-content">
-                    <h3>Hibiscus Body Scrub</h3>
-                    <p>An exquisite exfoliating blend formulated with brown sugar, pure honey, and refreshing hibiscus powder.</p>
+                    <h3>Vanilla Body Butter</h3>
+                    <p>An exquisite ultra-nourishing blend infused with vanilla, organic jojoba oil, raw shea butter, and pure coconut oil.</p>
                     <div><span class="specs">Size: 250g</span></div>
                 </div>
             </div>
@@ -408,7 +404,7 @@
             <!-- Product 7 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="orange_peel.jpg" alt="Orange Peeling Powder">
+                    <img src="wbnm.jfif" alt="Orange Peeling Powder">
                 </div>
                 <div class="card-content">
                     <h3>Orange Peeling Powder</h3>
@@ -420,7 +416,7 @@
             <!-- Product 8 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="castor_oil.jpg" alt="Organic Castor Oil">
+                    <img src="WBVC.jfif" alt="Organic Castor Oil">
                 </div>
                 <div class="card-content">
                     <h3>Organic Castor Oil</h3>
@@ -440,23 +436,17 @@
         function revealElements() {
             var reveals = document.querySelectorAll(".reveal");
             var windowHeight = window.innerHeight;
-            
             for (var i = 0; i < reveals.length; i++) {
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                // Elements load immediately if they are already inside the viewport window view range
-                var elementVisible = 60; 
-                
+                var elementVisible = 50;
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
             }
         }
-
-        // Run immediately on page load, and bind to scrolling events
         window.addEventListener("scroll", revealElements);
         window.addEventListener("DOMContentLoaded", revealElements);
-        // Backup run execution
-        setTimeout(revealElements, 200);
+        setTimeout(revealElements, 150);
     </script>
 </body>
 </html>
