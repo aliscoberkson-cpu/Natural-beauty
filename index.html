@@ -41,12 +41,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
         @keyframes glow {
             0% { box-shadow: 0 5px 15px rgba(138, 115, 85, 0.2); }
             50% { box-shadow: 0 5px 25px rgba(220, 174, 29, 0.4); }
@@ -82,7 +76,7 @@
             color: #e5dfd8;
         }
 
-        /* --- CTA Links (Strict Ordered Sequence) --- */
+        /* --- CTA Links --- */
         .social-links {
             display: flex;
             gap: 20px;
@@ -288,9 +282,9 @@
         <h1>Natural Beauty</h1>
         <p>Premium, 100% organic skincare and hair remedies meticulously crafted to let your natural glow radiate beautifully.</p>
         
-        <!-- Social Contact Group (Exact ordered requested) -->
+        <!-- Social Contact Group -->
         <div class="social-links">
-            <a href="https://www.tiktok.com/@YOUR_USERNAME" target="_blank" class="btn-social btn-tiktok">
+            <a href="https://www.tiktok.com/@naturalbeauty1990" target="_blank" class="btn-social btn-tiktok">
                 <i class="fab fa-tiktok"></i> TikTok Profile
             </a>
             <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" class="btn-social btn-whatsapp">
@@ -304,7 +298,7 @@
         <span class="best-seller-badge"><i class="fas fa-crown"></i> Best Seller</span>
         <h2>African Black Soap</h2>
         <p>Formulated for all skin types featuring Cocoa Pods, Shea Butter, Coconut Oil, and Palm Oil.</p>
-        <div class="price">6,000 SDG</div>
+        <div class="price">6,000 RWF</div>
     </section>
 
     <!-- Main Collection Catalog Grid -->
@@ -315,10 +309,10 @@
             <!-- Product 1 -->
             <div class="card reveal">
                 <div class="img-container">
-                    <img src="body_soap.jpg" alt="Body Soap Sabounia">
+                    <img src="body_soap.jpg" alt="Body Soap">
                 </div>
                 <div class="card-content">
-                    <h3>Body Soap (صابونية)</h3>
+                    <h3>Body Soap</h3>
                     <p>Rich brightening fusion blend containing Turmeric, Papaya, Oils, and Rose water.</p>
                     <div><span class="specs">Size: 250g</span></div>
                 </div>
@@ -421,7 +415,7 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150; // Triggers reveal when element is 150px into view
+                var elementVisible = 150;
                 
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
@@ -430,7 +424,6 @@
         }
 
         window.addEventListener("scroll", revealElements);
-        // Initial run in case elements are already on screen
         revealElements();
     </script>
 </body>
